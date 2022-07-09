@@ -1,0 +1,27 @@
+{
+    "name": "Fake Socket",
+    "description": "Track your Messenger activities in real-time.",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "action": {
+        "default_title": "Fake Socket"
+    },
+    "externally_connectable": {
+        "matches": ["*://*.facebook.com/*"]
+    },
+    "permissions": [],
+    "host_permissions": ["*://*.facebook.com/*"],
+    "content_scripts": [
+        {
+            "js": ["./content.js"],
+            "matches": ["*://*.facebook.com/*"],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["socket.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
